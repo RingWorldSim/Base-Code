@@ -13,7 +13,7 @@ FGrav10=G*M0*M1*(P1-P0)./(norm(P1-P0)).^3;
 FGrav20=G*M0*M2*(P0-P2)./(norm(P2-P0)).^3;
 FGravStar0=G*M0*MStar*(P0-PStar)./(norm(PStar-P0)).^3;
 
-%Returns the force as a vector
+%returns a forcce vector 
 Force=Fspring1+Fspring2+FGrav10+FGrav20+FGravStar0;
 end
 
