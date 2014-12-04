@@ -1,7 +1,7 @@
 function test_create_positions()
     %Built to test the create_positions function, by plotting the points
     %output
-    m_number = 50;
+    m_number = 4;
     radius = 5;
     
     positions = create_positions(m_number, radius);

@@ -1,7 +1,7 @@
-function res = find_acceleration(positions)
+function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Sun, k)
 %This function takes the list of positions, and calculates the acceleration for
 %each point mass
-    for i = length(positions)
+    for i = 1:length(positions)
         %This next bit of code is used to figure out which masses are
         %next to the current mass, accounting for the fact that the
         %array is actually representing pieces of a circle
@@ -23,7 +23,10 @@ function res = find_acceleration(positions)
         P2 = [positions(1, M2_index);positions(2, M2_index)];
         force = massForce(mass_of_piece, mass_of_piece, mass_of_piece, mass_Sun, P0, P1, P2, position_Sun, k, k);
         %Above line calculates a force vector on the mass
-        accelerations(i) = force./mass_of_piece; %Based on F = ma
+        
+        acceleration = force./mass_of_piece; %Based on F = ma
+        accelerations(1,i) = acceleration(1);
+        accelerations(2,i) = acceleration(2);
     end
     
     res = accelerations; %Returns a column vector [x;y] accelerations

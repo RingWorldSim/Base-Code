@@ -12,7 +12,7 @@ function res = create_positions(m_number, radius)
     
     for i = 1:m_number
         angle = (i-1)*theta; %Angle, starting at straight up, to the position of the mass
-        x = radius*sin(angle); %x component of the position
+        x = -radius*sin(angle); %x component of the position
         y = radius*cos(angle); %y component of the position
         positions(1, i) = x;
         positions(2, i) = y;
