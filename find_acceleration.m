@@ -21,7 +21,7 @@ function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Su
         P0 = [positions(1, M0_index);positions(2, M0_index)];
         P1 = [positions(1, M1_index);positions(2, M1_index)];
         P2 = [positions(1, M2_index);positions(2, M2_index)];
-        force = massForce(mass_of_piece, mass_of_piece, mass_of_piece, mass_Sun, P0, P1, P2, position_Sun, k, k);
+        force = massForce2(mass_of_piece, mass_of_piece, mass_of_piece, mass_Sun, P0, P1, P2, position_Sun, k, k);
         %Above line calculates a force vector on the mass
         
         acceleration = force./mass_of_piece; %Based on F = ma
