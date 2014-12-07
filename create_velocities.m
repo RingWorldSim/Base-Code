@@ -8,7 +8,7 @@ function res = create_velocities(m_number, velocity)
 %x and y coordinate (x on top)
     
     theta = 2*pi/m_number; %The angle between any two masses
-    velocities = zeros(size(positions)); %initializes array of velocities
+    velocities = zeros(2,m_number); %initializes array of velocities
     
     for i = 1:m_number
         angle = (i-1)*theta; %Angle, measuring at straight up, 

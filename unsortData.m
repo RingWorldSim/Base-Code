@@ -3,17 +3,18 @@ function res = unsortData(positions, velocities)
     %into a single column vector, so it can go back out of ode45
         
     counter = 1;
-    for i = 1:length(positions(1,:))
-        results(counter) = positions(1,i);
+    while counter < length(positions(1,:))
+        results(counter) = positions(1,counter);
         counter = counter + 1;
-        results(counter) = positions(2,i);
+        results(counter) = positions(2,counter);
         counter = counter + 1;
     end
-            
-    for i = 1:length(velocities(1,:))
-        results(counter) = velocities(1,i);
+       
+    
+    while counter - length(positions(1,:))< length(velocities(1,:))
+        results(counter) = velocities(1,counter - length(positions(1,:)));
         counter = counter + 1;
-        results(counter) = velocities(2,i);
+        results(counter) = velocities(2,counter - length(positions(1,:)));
         counter = counter + 1;
     end
         
