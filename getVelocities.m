@@ -1,5 +1,5 @@
 function velocities = getVelocities(positions, v)
-%calculates velocity vector of each ringworld mass given position and desired total
+%calculates initial velocity vector of each ringworld mass given position and desired total
 %velocity
   
 %positions=positions';
