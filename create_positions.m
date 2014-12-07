@@ -8,7 +8,7 @@ function res = create_positions(m_number, radius)
     %x and y coordinate (x on top)
     
     theta = 2*pi/m_number; %The angle between any two masses
-    positions = []; %The empty list of positions. I create it for good luck, mostly.
+    positions = zeros(2,m_number); %initialize with array of zeros
     
     for i = 1:m_number
         angle = (i-1)*theta; %Angle, starting at straight up, to the position of the mass
