@@ -20,6 +20,7 @@ initial_conditions = unsortData(mass_positions, mass_velocities);
 [t,Y] = ode45(@differentials, [0, 100], initial_conditions);
 
 
+plot(end_results)
 
 
 %%
