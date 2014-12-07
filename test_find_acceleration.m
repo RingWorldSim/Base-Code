@@ -1,9 +1,10 @@
-function accelerations = test_find_acceleration(positions)
+function [accelerations] = test_find_acceleration(positions,m_number)
     %creates vector of accelrations and positions
         %can call separately to get positions
-    %Commented out positions and replaced it with a function input. Left the code in here to help with ease of testing
     %positions = create_positions(4, 3.671*10^6); 
     %positions, mass of piece, mass of sun, position of sun, spring
     %constant
-    accelerations = find_acceleration (positions, 1, 5.972e24, [0;0], 0); %call to find accelerations
+    positions=reshape(positions,[2,m_number]);
+    accelerations = find_acceleration (positions, 1, 5.972e24, [0;0], 0)';
+    accelerations=reshape(accelerations,[m_number*2,1]);
 end
