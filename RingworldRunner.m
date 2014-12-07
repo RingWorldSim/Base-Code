@@ -1,4 +1,4 @@
-function res = Ringworld()
+function res = RingworldRunner()
 %Function simulates Ringworld as a series of point masses distributed
 %around a central point.
 
@@ -20,7 +20,6 @@ initial_conditions = unsortData(mass_positions, mass_velocities);
 [t,Y] = ode45(@differentials, [0, 100], initial_conditions);
 
 
-plot(end_results)
 
 
 %%
