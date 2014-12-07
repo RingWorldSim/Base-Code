@@ -1,7 +1,7 @@
 function velocities = getVelocities(positions, v)
 %calculates initial velocity vectors of each ringworld mass given position and desired total
 %velocity
-  %Doesn't work yet
+  %Differs form other function mostly by using position instead of number of masses
   
 %positions=positions';
 %positions=positions';
@@ -23,4 +23,5 @@ end
 %flips the position vector and mutliplies it by the scalar v to get the
 %velocity vectors
 velocities=v*flip(velocities);
+velocities(1,:)=-1*velocities(1,:);
 end
