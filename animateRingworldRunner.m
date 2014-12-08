@@ -1,4 +1,8 @@
-function animateRingworldRunner(t, final_positions)
+function animateRingworldRunner(t, final_positions, time_scale)
+    %timescale = ratio of animation time to actual time
+
+    minmax = [-5*10^11, 5*10^11, -5*10^11, 5*10^11];
+    
     for i = 1:length(t)
        clf
        hold on
@@ -8,8 +12,11 @@ function animateRingworldRunner(t, final_positions)
            plot(graphing_data(1,point), graphing_data(2,point), '.b')
            plot(0, 0, '.r')
        end
+       axis(minmax);
        text(0, 0 , int2str(i))
        drawnow;
+       %step=T(i+1)-T(i)*time_scale;
+       %pause_time(step)
     end
 end
 
