@@ -1,4 +1,4 @@
-function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Sun, k)
+function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Sun, k, l0)
 %This function takes the list of positions, and calculates the acceleration for
 %each point mass
     accelerations = zeros(2,length(positions));
@@ -22,7 +22,6 @@ function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Su
         P0 = [positions(1, M0_index);positions(2, M0_index)];
         P1 = [positions(1, M1_index);positions(2, M1_index)];
         P2 = [positions(1, M2_index);positions(2, M2_index)];
-        l0=norm(P0-P1);  %calculates free length
         force = massForce2(mass_of_piece, mass_of_piece, mass_of_piece, mass_Sun, P0, P1, P2, position_Sun, k, l0);
         %Above line calculates a force vector on the mass
         
