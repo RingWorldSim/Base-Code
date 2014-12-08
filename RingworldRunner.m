@@ -4,7 +4,7 @@ tic
 %around a central point.
 
 k = 0; %spring constant between the segments of Ringworld
-vinitial = 29.78*10^3; % Initial velocity of each piece of the ring
+vinitial = 0; % Initial velocity of each piece of the ring
 position_Sun = [0;0];
 mass_Sun = 1.989*10^30;
 
@@ -16,24 +16,27 @@ mass_of_piece = mass_ring/number_of_masses;
 mass_positions = create_positions(number_of_masses, ring_radius); %positions of each mass
 mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vector for each
 
+
 year = 365*24*60*60;
-time = year*10;
+time = year*100;
+
 %%
 initial_conditions = unsortData(mass_positions, mass_velocities);
+[thing1, thing2] = sortData(initial_conditions);
 [t,Y] = ode45(@differentials, [0, time], initial_conditions);
 
 final_positions = Y(:, 1:length(Y(1,:))/2); %Gets the first half of the Y matrix
-animateRingworldRunner(t, final_positions)
+animateRingworldRunner(t, final_positions);
 
 
 %%
     function res = differentials(t, Y)
-        [positions, velocities] = sortData(Y);
-        
+        [positions, velocities] = sortData(Y)
         dp = velocities;
         dv = find_acceleration(positions, mass_of_piece, mass_Sun, position_Sun, k);
+        %dv = zeros(2, length(positions));
         
-        res = unsortData(dp, dv)';
+        res = unsortData(dp, dv);
     end 
 
 %%

@@ -1,6 +1,7 @@
 function res = find_acceleration(positions, mass_of_piece, mass_Sun, position_Sun, k)
 %This function takes the list of positions, and calculates the acceleration for
 %each point mass
+    accelerations = zeros(2,length(positions));
     for i = 1:length(positions)
         %This next bit of code is used to figure out which masses are
         %next to the current mass, accounting for the fact that the
