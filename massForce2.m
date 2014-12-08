@@ -1,5 +1,5 @@
 function Force = massForce2( M0,M1,M2,MStar,P0,P1,P2,...
-    PStar,k1,k2 )
+    PStar,k,l0)
 %massForce Calculates forces on single ringworld mass
 %   Forces include spring forces and gravitational forces
 G=6.67e-11;
@@ -7,8 +7,8 @@ G=6.67e-11;
 % Spring Force is a restoring force and opposes gravity, and is
 % therefore positive
 
-Fspring1=k1*(P0-P1); 
-Fspring2=k2*(P0-P2);
+Fspring1=k*((P0-P1)-l0); %l0 is free length of spring
+Fspring2=k*((P0-P2)-l0);
 %Gravity calculated based on the two nearest masses and the star,
 %not every ringworld mass
 %Gravity is pointed in the negative direction in this coordinate system
