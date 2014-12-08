@@ -10,13 +10,13 @@ function animateRingworldRunner(t, final_positions, time_scale)
        graphing_data = create_frame(position_data);
        for point = 1:length(graphing_data(1,:))
            plot(graphing_data(1,point), graphing_data(2,point), '.b')
-           plot(0, 0, '.r')
+           plot(0, 0, '.r','MarkerSize',50)
        end
        axis(minmax);
        text(0, 0 , int2str(i))
        drawnow;
-       %step=T(i+1)-T(i)*time_scale;
-       %pause_time(step)
+%        step=t(i+1)-t(i)*time_scale;
+%        pause(step)
     end
 end
 

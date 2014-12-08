@@ -1,4 +1,4 @@
-function animateRingworldRunner(T, final_positions, time_scale)
+function animateRingworldRunner(t, final_positions, time_scale)
     %timescale = ratio of animation time to actual time
 
     minmax = [-5*10^11, 5*10^11, -5*10^11, 5*10^11];
@@ -15,7 +15,7 @@ function animateRingworldRunner(T, final_positions, time_scale)
        axis(minmax);
        text(0, 0 , int2str(i))
        drawnow;
-       step=T(i+1)-T(i)*time_scale;
+       step=t(i+1)-t(i)*time_scale;
        pause_time(step)
     end
 end

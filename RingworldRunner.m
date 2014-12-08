@@ -9,7 +9,7 @@ position_Sun = [0;0];
 mass_Sun = 1.989*10^30;
 
 
-number_of_masses = 4;
+number_of_masses = 13;
 mass_ring = 1000; %Total mass of the ring
 ring_radius = 1.5*10^11;
 mass_of_piece = mass_ring/number_of_masses;
@@ -18,7 +18,7 @@ mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vecto
 
 
 year = 365*24*60*60;
-time = year*100;
+time = year*10;
 
 %making timescale
 time_scale = 1/year;
