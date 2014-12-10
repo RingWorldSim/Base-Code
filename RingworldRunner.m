@@ -29,6 +29,7 @@ time_scale = 3/year;
 %%
 initial_conditions = unsortData(mass_positions, mass_velocities);
 tic
+options = odeset('Events', @events_func); %call to events function
 [t,Y] = ode23(@differentials, [0:time/1000:time], initial_conditions);
 toc
 
