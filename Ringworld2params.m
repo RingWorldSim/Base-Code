@@ -32,11 +32,10 @@ time_scale = 3/year;
 
 %%
 initial_conditions = unsortData(mass_positions, mass_velocities);
-tic
+
 options = odeset('Events', @events_func); %call to events function
  [t,Y] = ode23(@differentials, [0:time/1000:time], initial_conditions, options);
 %[t,Y] = ode23(@differentials, [0:time/1000:time], initial_conditions);
-toc
 
 final_time=t(end);
 final_positions = Y(:, 1:length(Y(1,:))/2); %Gets the first half of the Y matrix
