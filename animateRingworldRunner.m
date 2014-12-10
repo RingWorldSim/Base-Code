@@ -4,6 +4,7 @@ function animateRingworldRunner(t, final_positions, time_scale)
     minmax = [-5*10^11, 5*10^11, -5*10^11, 5*10^11];
     
     for i = 1:length(t)-1
+       tic
        clf
        hold on
        position_data = final_positions(i, :);
@@ -17,7 +18,10 @@ function animateRingworldRunner(t, final_positions, time_scale)
        text(0, 0 , int2str(i))
        drawnow;
        step=(t(i+1)-t(i))*time_scale;
-       pause(step)
+       drawtime = toc;
+       if drawtime > 0
+           pause(step - drawtime)
+       end
     end
 end
 

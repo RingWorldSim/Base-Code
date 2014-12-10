@@ -3,6 +3,7 @@ function res = create_weird_velocities(m_number, velocity)
 %velocities to see what happens if it is really, really broken
     
     velocities = create_velocities(m_number, velocity);
-    velocities(1,2) = 10000;
+    velocities(1,2) = 30000;
+    res = velocities;
    
 end
