@@ -7,8 +7,8 @@ G=6.67e-11;
 % Spring Force is a restoring force and opposes gravity, and is
 % therefore positive
 
-Fspring1=k*(P0-P1).*(norm(P0-P1)-l0)./norm(P0-P1); %l0 is free length of spring
-Fspring2=k*(P0-P2).*(norm(P0-P2)-l0)./norm(P0-P2);
+Fspring1=-k*(P0-P1).*(norm(P0-P1)-l0)./norm(P0-P1); %l0 is free length of spring
+Fspring2=-k*(P0-P2).*(norm(P0-P2)-l0)./norm(P0-P2);
 %Gravity calculated based on the two nearest masses and the star,
 %not every ringworld mass
 %Gravity is pointed in the negative direction in this coordinate system
