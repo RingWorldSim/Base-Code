@@ -5,20 +5,21 @@ function sweep2paramsKV()
 % determines values of the two paramters to sweep, in this case k and
 % vinitial
 
-k = linspace(0.001,1000,100);
-vinitial = linspace(500,500000,100);
+k = linspace(0.001,1000,10);
+vinitial = linspace(500,500000,10);
 
 %iterates the k and vinitial values over a for loop
-time2break=zeros(length(k),length(vinitial)); %preallocating time2break as array of zeros
+time2break=zeros(length(k),length(vinitial));
 for i=1:length(k)
     for j=1:length(vinitial)
-        time2break(i)=Ringworld2params(k(i),vinitial(j)); %assigns time2break as output of Ringworld2params call
+        time2break(i)=Ringworld2params(k(i),vinitial(j));
     end
 end
-
+time2break=time2break/(24*60*60);
 pcolor(k,vinitial,time2break) %pcolor graph
 xlabel('k value (N/m)')
 ylabel('initial velocity (m/s)')
 title('Life of Ringworld')
-
+c = colorbar();
+ylabel(c,'Time before breaking (days)','FontSize',12);
 end
