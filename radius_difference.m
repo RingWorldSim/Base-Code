@@ -9,6 +9,6 @@ function res = radius_difference(Y)
         radii(i) = norm(positions(:,i));
     end
     
-    res = max(radii(i)) - min(radii(i));
+    res = max(radii(i)) - min(radii(i)); %sets radius difference
 
 end
