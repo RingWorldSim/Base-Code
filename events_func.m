@@ -4,5 +4,5 @@ function [value,isterminal,direction] = events_func(t, Y)
     radiusDiff = radius_difference(Y);    % difference between the radii
     value =  radiusDiff-allowableDiff;     % equals 0 when maximum allowable radiusDiff is reached 
     isterminal = 1;                   %will terminate iteration
-    direction = 1;                  %approach from either direction
+    direction = 0;                  %approach from either direction
 end
