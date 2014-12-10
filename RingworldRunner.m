@@ -15,7 +15,7 @@ mass_of_piece = mass_ring/number_of_masses;
 mass_positions = create_positions(number_of_masses, ring_radius); %positions of each mass
 
 %mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vector for each
-mass_velocities = create_weird_velocities(number_of_masses, vinitial) %velocity vector for each
+mass_velocities = create_weird_velocities(number_of_masses, vinitial); %velocity vector for each
 
 
 l0=norm(mass_positions(:,1)-mass_positions(:,2));  %calculates free length of spring
