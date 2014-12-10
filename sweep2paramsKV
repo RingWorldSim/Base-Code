@@ -17,5 +17,8 @@ for i=1:length(k)
 end
 
 pcolor(k,vinitial,time2break) %pcolor graph
+xlabel('k value (N/m)')
+ylabel('initial velocity (m/s)')
+title('Life of Ringworld')
 
 end
