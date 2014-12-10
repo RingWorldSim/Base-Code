@@ -1,6 +1,6 @@
 function sweep2paramsKV()
 %sweeps the k and initial velocity of ringworld
-%   calls Ringworld2params and generates pcolor graph
+%   calls Ringworld2params and generates pcolor plot
 
 % determines values of the two paramters to sweep, in this case k and
 % vinitial
