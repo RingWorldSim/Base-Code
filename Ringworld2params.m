@@ -40,7 +40,8 @@ toc
 
 final_time=t(end);
 final_positions = Y(:, 1:length(Y(1,:))/2); %Gets the first half of the Y matrix
-animateRingworldRunner(t, final_positions, time_scale);
+% eliminate animation function call for sweeping parameters
+% animateRingworldRunner(t, final_positions, time_scale); 
 
 
 %%
