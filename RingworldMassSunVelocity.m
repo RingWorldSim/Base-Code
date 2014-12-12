@@ -1,31 +1,31 @@
-function final_time = RingworldMassVchange(mass_ring,vchange)
+function final_time = RingworldMassSunVelocity(mass_Sun,vinitial)
 %Function simulates Ringworld as a series of point masses distributed
 %around a central point.
 close all
 
 %v and k are commented out in order to sweep these two parameters in this
 %version of the code
-k = 100000000; %spring constant between the segments of Ringworld (N/m)
-vinitial = 29800; % Initial velocity of each piece of the ring
+k = 10000; %spring constant between the segments of Ringworld (N/m)
+%vinitial = 29800; % Initial velocity of each piece of the ring
 
 position_Sun = [0;0];
-mass_Sun = 1.989*10^30;
+%mass_Sun = 1.989*10^30;
 
 
 number_of_masses = 10;
-%mass_ring = 1.8*10^27; %Total mass of the ring
+mass_ring = 1.8*10^27; %Total mass of the ring
 ring_radius = 1.5*10^11;
 mass_of_piece = mass_ring/number_of_masses;
 mass_positions = create_positions(number_of_masses, ring_radius); %positions of each mass
 
-%mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vector for each
-mass_velocities = create_weird_velocities(number_of_masses, vinitial, vchange); %velocity vector for each
+mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vector for each
+%mass_velocities = create_weird_velocities(number_of_masses, vinitial, vchange); %velocity vector for each
 
 
 l0=norm(mass_positions(:,1)-mass_positions(:,2));  %calculates free length of spring
 
 year = 365*24*60*60;
-time = year*10;
+time = year*30;
 
 %making timescale
 time_scale = 3/year;

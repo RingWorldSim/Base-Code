@@ -1,6 +1,6 @@
 function res = sweepMassVchange()
-    masses = linspace(1.8*10^26, 1.8*10^30, 10);
-    vchange = linspace(1, 100000, 10);
+    masses = linspace(1.8*10^26, 1.8*10^30, 5);
+    vchange = linspace(1, 100000000, 5);
     
     time2break=zeros(length(masses),length(vchange));
     counter = 1;
