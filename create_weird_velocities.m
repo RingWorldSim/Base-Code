@@ -1,9 +1,9 @@
-function res = create_weird_velocities(m_number, velocity)
+function res = create_weird_velocities(m_number, velocity, vchange)
 %It's the create_velocities function, except it modifies the initial
 %velocities to see what happens if it is really, really broken
     
     velocities = create_velocities(m_number, velocity);
-    velocities(2, 1) = 10000;
+    velocities(2, 1) = vchange;
     res = velocities;
     %     for i = 1:length(velocities(1,:))
 %        velocity = velocities(:,i);
