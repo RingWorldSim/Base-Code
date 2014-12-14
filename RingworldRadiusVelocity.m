@@ -1,4 +1,4 @@
-function final_time = RingworldMassSunVelocity(mass_Sun,vinitial)
+function final_time = RingworldRadiusVelocity(ring_radius,vinitial)
 %Function simulates Ringworld as a series of point masses distributed
 %around a central point.
 close all
@@ -9,12 +9,12 @@ k = 10000; %spring constant between the segments of Ringworld (N/m)
 %vinitial = 29800; % Initial velocity of each piece of the ring
 
 position_Sun = [0;0];
-%mass_Sun = 1.989*10^30;
+mass_Sun = 1.989*10^30;
 
 
 number_of_masses = 10;
-mass_ring = 1.8*10^27; %Total mass of the ring
-ring_radius = 1.5*10^11;
+mass_ring = 1.8*10^5; %Total mass of the ring
+%ring_radius = 1.5*10^11;
 mass_of_piece = mass_ring/number_of_masses;
 mass_positions = create_positions(number_of_masses, ring_radius); %positions of each mass
 
@@ -22,10 +22,10 @@ mass_velocities = create_velocities(number_of_masses, vinitial); %velocity vecto
 %mass_velocities = create_weird_velocities(number_of_masses, vinitial, vchange); %velocity vector for each
 
 
-l0=norm(mass_positions(:,1)- mass_positions(:,2));  %calculates free length of spring
+l0=norm(mass_positions(:,1)-mass_positions(:,2));  %calculates free length of spring
 
 year = 365*24*60*60;
-time = year*30;
+time = year*5;
 
 %making timescale
 time_scale = 3/year;
@@ -34,7 +34,7 @@ time_scale = 3/year;
 initial_conditions = unsortData(mass_positions, mass_velocities);
 
 options = odeset('Events', @events_func2); %call to events function
- [t,Y] = ode23(@differentials, [0:time/1000:time], initial_conditions, options);
+ [t,Y] = ode23(@differentials, [0,time/1000,time], initial_conditions, options);
 %[t,Y] = ode23(@differentials, [0:time/1000:time], initial_conditions);
 
 final_time=t(end);
