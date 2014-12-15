@@ -2,7 +2,7 @@ function res = RingworldRunnerValidation()
 %Function simulates Ringworld as a series of point masses distributed
 %around a central point.
 close all %closes graphing window
-k = 100000000; %spring constant between the segments of Ringworld (N/m)
+k = 10^15; %spring constant between the segments of Ringworld (N/m)
 vinitial = 29800; % Initial velocity of each piece of the ring
 position_Sun = [0;0];
 mass_Sun = 1.989*10^30;

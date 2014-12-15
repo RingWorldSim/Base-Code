@@ -40,7 +40,7 @@ options = odeset('Events', @events_func2); %call to events function
 time
 
 final_positions = Y(:, 1:length(Y(1,:))/2); %Gets the first half of the Y matrix
-final_time=t(end)
+final_time=t(end);
 %animateRingworldRunner(t, final_positions, time_scale);
 
 
