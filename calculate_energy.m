@@ -38,7 +38,7 @@ function [spring_energy, kinetic_energy, potential_energy_sun, potential_energy_
         %Kinetic and basic potential
         h = norm(P0);
         kinetic_energy = kinetic_energy + .5 * mass_piece * norm(V0)^2;
-        potential_energy_sun = potential_energy_sun + G*mass_piece*MStar/h;
+        potential_energy_sun = potential_energy_sun + -G*mass_piece*MStar/h;
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %Between the mass and its neighbors
