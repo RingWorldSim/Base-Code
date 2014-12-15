@@ -2,7 +2,7 @@ function res = RingworldRunner()
 %Function simulates Ringworld as a series of point masses distributed
 %around a central point.
 close all %closes graphing window
-k = 10^10; %spring constant between the segments of Ringworld (N/m)
+k = 10^15; %spring constant between the segments of Ringworld (N/m)
 vinitial = 29800; % Initial velocity of each piece of the ring
 position_Sun = [0;0];
 mass_Sun = 1.989*10^30;
@@ -22,7 +22,7 @@ mass_velocities = create_weird_velocities(number_of_masses, vinitial, 1000); %ve
 l0=norm(mass_positions(:,1)-mass_positions(:,2));  %calculates free length of spring
 
 year = 365*24*60*60;
-time = year*10;
+time = year;
 
 %making timescale
 time_scale = 3/year;
